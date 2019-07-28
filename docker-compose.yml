@@ -1,0 +1,104 @@
+#!/usr/bin/env docker-compose -p picapi -f
+
+version: "3.7"
+
+networks:
+  internal:
+    driver: overlay
+    internal: true
+    external: false
+  external:
+    driver: overlay
+    internal: false
+    external: false
+
+services:
+
+  application:
+    privileged: false
+    restart: on-failure
+    command: python3 main.py ${PORT:-8000}
+    image: pvtmert/picapi
+    build:
+      context: ./
+      dockerfile: dockerfile
+    networks:
+      - internal
+    expose:
+      - ${PORT:-8000}
+    volumes:
+      - ./:/data:ro
+    healthcheck:
+      test: curl -vskLfm5 http://localhost:${PORT:-8000}
+      interval: 1m
+      timeout: 10s
+      retries: 3
+
+  cache:
+    privileged: false
+    restart: on-failure
+    command: redis-server
+    image: pvtmert/picapi
+    build:
+      context: ./
+      dockerfile: dockerfile
+    networks:
+      - internal
+    expose:
+      - 6379
+    healthcheck:
+      test: redis-cli ping
+      interval: 1m
+      timeout: 10s
+      retries: 3
+
+  gateway:
+    privileged: false
+    restart: on-failure
+    command: |
+      bash -c "echo '
+        resolver_timeout 30s;
+        resolver 127.0.0.11 valid=1h ipv6=off;
+        server {
+          listen 80 default_server;
+          location / {
+            set $$upstream http://application:${PORT:-8000};
+            proxy_read_timeout 1m;
+            proxy_pass $$upstream;
+          }
+        }
+      ' | tee /etc/nginx/sites-enabled/default;
+      ln -sf /dev/stdout /var/log/nginx/access.log;
+      ln -sf /dev/stderr /var/log/nginx/error.log;
+      nginx -g 'daemon off;';"
+    image: pvtmert/picapi
+    build:
+      context: ./
+      dockerfile: dockerfile
+    networks:
+      - internal
+      - external
+    ports:
+      - 80:80
+    healthcheck:
+      test: curl -vskLfm5 http://localhost
+      interval: 1m
+      timeout: 10s
+      retries: 3
+
+  storage:
+    privileged: false
+    restart: on-failure
+    image: pvtmert/picapi
+    build:
+      context: ./
+      dockerfile: dockerfile
+    networks:
+      - internal
+    expose:
+      - 2049
+    volumes:
+      - data_files:/data
+    cap_add:
+      - SYS_ADMIN
+      - SYS_MODULE
