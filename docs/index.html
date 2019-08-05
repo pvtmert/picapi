@@ -2,13 +2,59 @@
 	<head>
 		<meta charset="utf-8" />
 		<link rel=stylesheet href=./style.css />
+		<style>
+			* {
+				transition: 0.5s;
+			}
+			body {
+				background: black;
+			}
+			main {
+				background-size: cover;
+				background-image: url(https://source.unsplash.com/random);
+				background-repeat: no-repeat;
+				background-position: center;
+				background-color: black;
+				display: block;
+				position: fixed;
+				top: 0;
+				left: 0;
+				right: 0;
+				bottom: 0;
+			}
+		</style>
 	</head>
 	<body>
+		<main></main>
 	</body>
 	<script src=./main.js ></script>
 	<script >
+		'use strict';
 		window.onload = function(e) {
-			return console.log("ok")
+			return console.log("ok");
 		}
+		setInterval(function() {
+			let user = "pvtmert";
+			let main = document.querySelector("main");
+			let res = `${innerWidth}x${innerHeight}`;
+			let url = `https://source.unsplash.com/user/${user}/likes/${res}`;
+			main.style.filter = "blur(128px)";
+			fetch(url).then(resp => {
+				//main.style.backgroundImage = `url(${resp.url})`;
+				return resp.blob();
+			}).then(blob => {
+				let reader = new FileReader();
+				reader.onload = function() {
+					main.style.backgroundImage = `url(${this.result})`;
+					return;
+				};
+				reader.readAsDataURL(blob);
+				return console.log(blob);
+			}).finally(function() {
+				main.style.filter = "blur(0px)";
+				return console.log(arguments);
+			})
+			return;
+		}, 9999);
 	</script>
 </html>
