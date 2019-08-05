@@ -12,10 +12,20 @@ networks:
     internal: false
     external: false
 
+volumes:
+  data:
+    driver: local
+  nfs:
+    driver: local
+    driver_opts:
+      type: nfs
+      o: addr=storage,rw
+      device: ":/mnt"
+
 services:
 
   application:
-    privileged: false
+    privileged: true
     restart: on-failure
     command: python3 main.py ${PORT:-8000}
     image: pvtmert/picapi
@@ -35,7 +45,7 @@ services:
       retries: 3
 
   cache:
-    privileged: false
+    privileged: true
     restart: on-failure
     command: redis-server
     image: pvtmert/picapi
@@ -53,24 +63,27 @@ services:
       retries: 3
 
   gateway:
-    privileged: false
+    privileged: true
     restart: on-failure
     command: |
-      bash -c "echo '
+      bash -c "
+      rm -rf /etc/nginx/sites-enabled/default;
+      echo '
         resolver_timeout 30s;
         resolver 127.0.0.11 valid=1h ipv6=off;
         server {
           listen 80 default_server;
-          location / {
+          location /api {
             set $$upstream http://application:${PORT:-8000};
             proxy_read_timeout 1m;
             proxy_pass $$upstream;
           }
         }
-      ' | tee /etc/nginx/sites-enabled/default;
+      ' | tee /etc/nginx/sites-enabled/application.conf;
       ln -sf /dev/stdout /var/log/nginx/access.log;
       ln -sf /dev/stderr /var/log/nginx/error.log;
-      nginx -g 'daemon off;';"
+      nginx -g 'daemon off;';
+      "
     image: pvtmert/picapi
     build:
       context: ./
@@ -78,6 +91,8 @@ services:
     networks:
       - internal
       - external
+    expose:
+      - 80
     ports:
       - 80:80
     healthcheck:
@@ -87,8 +102,20 @@ services:
       retries: 3
 
   storage:
-    privileged: false
+    privileged: true
     restart: on-failure
+    command: |
+      bash -c '
+        echo "/data *(rw,sync,insecure,no_subtree_check,no_root_squash,fsid=0)" \
+        | tee -a /etc/exports;
+        exportfs -ra;
+        service rpcbind           start;
+        service nfs-common        start;
+        service nfs-kernel-server start;
+        exportfs -ra
+        netstat -tpnc;
+        rpc.nfsd -d -U -N 3 -V 4 $$(nproc);
+      '
     image: pvtmert/picapi
     build:
       context: ./
@@ -97,6 +124,8 @@ services:
       - internal
     expose:
       - 2049
+    ports:
+      - 2049:2049
     volumes:
       - data_files:/data
     cap_add:
