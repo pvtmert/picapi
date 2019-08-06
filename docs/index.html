@@ -11,7 +11,7 @@
 			}
 			main {
 				background-size: cover;
-				background-image: url(https://source.unsplash.com/random);
+				background-image: none;
 				background-repeat: no-repeat;
 				background-position: center;
 				background-color: black;
@@ -30,14 +30,11 @@
 	<script src=./main.js ></script>
 	<script >
 		'use strict';
-		window.onload = function(e) {
-			return console.log("ok");
-		}
-		setInterval(function() {
-			let user = "pvtmert";
+		let collection = 1459961; // photo of the day archive
+		function fetchImageFrom(baseUrl) {
 			let main = document.querySelector("main");
 			let res = `${innerWidth}x${innerHeight}`;
-			let url = `https://source.unsplash.com/user/${user}/likes/${res}`;
+			let url = `${baseUrl}/${res}`;
 			main.style.filter = "blur(128px)";
 			fetch(url).then(resp => {
 				//main.style.backgroundImage = `url(${resp.url})`;
@@ -55,6 +52,11 @@
 				return console.log(arguments);
 			})
 			return;
-		}, 9999);
+		}
+		window.onload = function(e) {
+			let base = `https://source.unsplash.com/collection/${collection}`;
+			setInterval(fetchImageFrom, 9999, base);
+			return fetchImageFrom(base);
+		}
 	</script>
 </html>
