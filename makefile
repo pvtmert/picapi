@@ -2,13 +2,13 @@
 
 IPORT := 80
 EPORT := 80
-IMAGE := pvtmert/picapi
+IMAGE := pvtmert/picapi:full
 FLASK_ENV := development
 
 all:
-	# maybe use 'run' ?
+	# maybe use 'run' or 'local' ?
 
-docker: dockerfile
+docker: full.dockerfile
 	docker build -t $(IMAGE) -f $< .
 
 run: docker
@@ -20,4 +20,8 @@ deps: requirements.txt
 	pip3 install --user -U -r $<
 
 local: deps
-	python3 main.py
+	FLASK_ENV=development python3 -m api 8080
+
+clean:
+	-find . -iname __pycache__ -exec rm -rf {} +
+	-docker rmi $(IMAGE)

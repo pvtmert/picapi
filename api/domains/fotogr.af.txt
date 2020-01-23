@@ -1,0 +1,108 @@
+% IANA WHOIS server
+% for more information on IANA, visit http://www.iana.org
+% This query returned 1 object
+
+refer:        whois.nic.af
+
+domain:       AF
+
+organisation: Ministry of Communications and IT
+address:      Mohammad Jan Khan Watt
+address:      Kabul
+address:      Afghanistan
+
+contact:      administrative
+name:         General Manager .AF 
+organisation: Ministry of Communications and IT
+address:      Mohammad Jan Khan Watt
+address:      Kabul 26000
+address:      Afghanistan
+phone:        +93 70 6604794
+e-mail:       registry@nic.af
+
+contact:      technical
+name:         General Manager .AF
+organisation: Ministry of Communications and IT
+address:      Mohammad Jan Khan Watt
+address:      Kabul 26000
+address:      Afghanistan
+phone:        +93 70 6604794
+e-mail:       registry@nic.af
+
+nserver:      NS.ANYCAST.NIC.AF 2001:500:14:6013:ad:0:0:1 204.61.216.13
+nserver:      NS.COCCA.FR 185.17.236.93 2a03:dd40:3:0:0:0:0:93
+nserver:      NS.COCCAREGISTRY.ORG 185.17.236.111 2a03:dd40:3:0:0:0:0:111
+ds-rdata:     3691 8 2 56C77864A2CD726F252634C8804A2AF33EA2CE70C49091E08C223BD2BB33CF5C
+
+whois:        whois.nic.af
+
+status:       ACTIVE
+remarks:      Registration information: http://www.nic.af
+
+created:      1997-10-16
+changed:      2019-04-08
+source:       IANA
+
+Domain Name: fotogr.af
+Registry Domain ID: 454668-CoCCA
+Registry WHOIS Server:: whois.coccaregistry.org
+Registrar URL: http://www.markmonitor.com
+Updated Date: 2019-07-26T09:12:51.183Z
+Creation Date: 2010-08-27T11:09:11.173Z
+Registry Expiry Date: 2021-08-27T21:09:41.648Z
+Registrar Registration Expiration Date: 2021-08-27T21:09:41.648Z
+Registrar: MarkMonitor
+Domain Status: clientDeleteProhibited https://icann.org/epp#clientDeleteProhibited
+Domain Status: clientUpdateProhibited https://icann.org/epp#clientUpdateProhibited
+Domain Status: clientTransferProhibited https://icann.org/epp#clientTransferProhibited
+Registry Registrant ID: 1087158-CoCCA
+Registrant Name: Domain Administrator
+Registrant Organization: Lens Rentals.com Incorporated
+Registrant Street: 7730A Trinity Rd
+Registrant Street: Suite 110
+Registrant City: Cordova
+Registrant State/Province: Tennessee
+Registrant Postal Code: 38018
+Registrant Country: US
+Registrant Phone: +1.9017549100
+Registrant Email: support@lensrentals.com
+Registry Admin ID: 1087158-CoCCA
+Admin Name: Domain Administrator
+Admin Organization: Lens Rentals.com Incorporated
+Admin Street: 7730A Trinity Rd
+Admin Street: Suite 110
+Admin City: Cordova
+Admin State/Province: Tennessee
+Admin Postal Code: 38018
+Admin Country: US
+Admin Phone: +1.9017549100
+Admin Email: support@lensrentals.com
+Registry Tech ID: 1087158-CoCCA
+Tech Name: Domain Administrator
+Tech Organization: Lens Rentals.com Incorporated
+Tech Street: 7730A Trinity Rd
+Tech Street: Suite 110
+Tech City: Cordova
+Tech State/Province: Tennessee
+Tech Postal Code: 38018
+Tech Country: US
+Tech Phone: +1.9017549100
+Tech Email: support@lensrentals.com
+Registry Billing ID: 1087158-CoCCA
+Billing Name: Domain Administrator
+Billing Organization: Lens Rentals.com Incorporated
+Billing Street: 7730A Trinity Rd
+Billing Street: Suite 110
+Billing City: Cordova
+Billing State/Province: Tennessee
+Billing Postal Code: 38018
+Billing Country: US
+Billing Phone: +1.9017549100
+Billing Email: support@lensrentals.com
+Name Server: ns1.lensrentals.com
+Name Server: ns3.lensrentals.org
+Name Server: ns4.lensrentals.net
+Name Server: ns2.lensrentals.com
+DNSSEC: unsigned
+>>> Last update of WHOIS database: 2019-08-05T08:18:07.474Z <<<
+

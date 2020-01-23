@@ -1,3 +1,6 @@
 flask
 redis
 uwsgi
+redis-py-cluster
+python-whois
+jsonify

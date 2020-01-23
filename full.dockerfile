@@ -1,10 +1,6 @@
-#!/usr/bin/env docker build --compress -t pvtmert/picapi -f
+#!/usr/bin/env -S docker build --compress -t pvtmert/picapi:full -f
 
-FROM debian
-
-ENV PORT 80
-EXPOSE ${PORT}
-WORKDIR /data
+FROM debian:10
 
 RUN apt update && apt install -y \
 	nfs-kernel-server nfs-common \
@@ -14,17 +10,20 @@ RUN apt update && apt install -y \
 	python3-redis python3-flask \
 	procps net-tools
 
-COPY api/requirements.txt ./
+WORKDIR /data
+
+COPY ./requirements.txt ./
 RUN pip3 install -U -r requirements.txt
 
-ARG FLASK_ENV=production
-ENV FLASK_ENV ${FLASK_ENV}
+ENV FLASK_ENV ${FLASK_ENV:-production}
 ENV APPNAME api
 
-COPY nginx.conf /etc/nginx/sites-enabled/default
-COPY uwsgi.ini  /etc/uwsgi/apps-enabled/${APPNAME}.ini
-COPY ${APPNAME} ./
+COPY ./cfg/nginx.conf /etc/nginx/sites-enabled/default
+COPY ./cfg/uwsgi.ini  /etc/uwsgi/apps-enabled/${APPNAME}.ini
+COPY ${APPNAME} ./${APPNAME}
 
+ENV PORT 80
+EXPOSE ${PORT}
 
 CMD echo 'export FLASK_ENV="${FLASK_ENV:-'${FLASK_ENV}'}"' \
 	| tee -a /etc/default/uwsgi; nginx -t; \

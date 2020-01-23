@@ -1,0 +1,250 @@
+% IANA WHOIS server
+% for more information on IANA, visit http://www.iana.org
+% This query returned 1 object
+
+refer:        whois.uniregistry.net
+
+domain:       PHOTO
+
+organisation: Uniregistry, Corp.
+address:      Governors Square, Unit 3-110
+address:      23 Lime Tree Bay Avenue
+address:      Grand Cayman, Cayman Islands
+address:      PO Box 1361, George Town, KY1-1108
+address:      Cayman Islands
+
+contact:      administrative
+name:         Frank Schilling
+organisation: Uniregistry Corp.
+address:      Governors Square, Unit 3-110
+address:      23 Lime Tree Bay Avenue
+address:      Grand Cayman, Cayman Islands
+address:      PO Box 1361, George Town, KY1-1108
+address:      Cayman Islands
+phone:        +1.3457496263
+fax-no:       +1.3457466263
+e-mail:       contact@uniregistry.com
+
+contact:      technical
+name:         Francisco Obispo
+organisation: Uniregistry Inc.
+address:      Governors Square, Unit 3-110
+address:      23 Lime Tree Bay Avenue
+address:      Grand Cayman, Cayman Islands
+address:      PO Box 1361, George Town, KY1-1108
+address:      Cayman Islands
+phone:        +1.3457496263
+fax-no:       +1.3457466263
+e-mail:       ops@uniregistry.com
+
+nserver:      NS1.UNIREGISTRY.NET 2620:57:4000:1:0:0:0:1 64.96.1.1
+nserver:      NS2.UNIREGISTRY.INFO 64.96.245.53
+nserver:      NS3.UNIREGISTRY.NET 185.159.197.3 2620:10a:80aa:0:0:0:0:3
+nserver:      NS4.UNIREGISTRY.INFO 185.159.198.3 2620:10a:80ab:0:0:0:0:3
+ds-rdata:     11884 5 1 5452469C278FB3EF65B9D47B709DBDDA025FD6DA
+ds-rdata:     11884 5 2 80ADEC219929825CE490E0B9CAAC5CAD806FC8AD4C4E0D48017F62F5408D6FF5
+ds-rdata:     25561 5 2 7C024F0832997289B954F9FE59D7D66C7A14F91F1E7CAD603184D7E109AF7A54
+ds-rdata:     25561 5 1 58408E4ADA0F34C4E9E5A594A1D1D1D0C263A1CA
+ds-rdata:     37609 5 2 4AF9273545CF29C084824B693DC59C2863B70F0A948D2E443EFBBB38AAC30C3A
+ds-rdata:     37609 5 1 1E37E1D3978B148EAF23C10358C94BD6CE3EAB4A
+
+whois:        whois.uniregistry.net
+
+status:       ACTIVE
+remarks:      Registration information: http://uniregistry.link
+
+created:      2014-01-16
+changed:      2018-06-06
+source:       IANA
+
+Domain Name: fast.photo
+Registry Domain ID: DO_f6c6eb7862a5b317aeacf2e684aba436-UR
+Registrar WHOIS Server: whois.uniregistrar.com
+Registrar URL: uniregistrar.com
+Updated Date: 2019-03-14T23:02:15.279Z
+Creation Date: 2018-04-06T14:31:36.163Z
+Registry Expiry Date: 2020-04-06T14:31:36.163Z
+Registrar: Uniregistrar Corp
+Registrar IANA ID: 1659
+Registrar Abuse Contact Email: abuse@uniregistry.com
+Registrar Abuse Contact Phone: +1.4426008800x5
+Domain Status: clientTransferProhibited https://icann.org/epp#clientTransferProhibited
+Registry Registrant ID: REDACTED FOR PRIVACY
+Registrant Name: REDACTED FOR PRIVACY
+Registrant Organization: 
+Registrant Street: REDACTED FOR PRIVACY
+Registrant City: REDACTED FOR PRIVACY
+Registrant State/Province: Grand Cayman
+Registrant Postal Code: REDACTED FOR PRIVACY
+Registrant Country: KY
+Registrant Phone: REDACTED FOR PRIVACY
+Registrant Fax: REDACTED FOR PRIVACY
+Registrant Email: Please query the RDDS service of the Registrar of Record identified in this output for information on how to contact the Registrant, Admin, or Tech contact of the queried domain name
+Registry Admin ID: REDACTED FOR PRIVACY
+Admin Name: REDACTED FOR PRIVACY
+Admin Organization: REDACTED FOR PRIVACY
+Admin Street: REDACTED FOR PRIVACY
+Admin City: REDACTED FOR PRIVACY
+Admin State/Province: REDACTED FOR PRIVACY
+Admin Postal Code: REDACTED FOR PRIVACY
+Admin Country: REDACTED FOR PRIVACY
+Admin Phone: REDACTED FOR PRIVACY
+Admin Fax: REDACTED FOR PRIVACY
+Admin Email: Please query the RDDS service of the Registrar of Record identified in this output for information on how to contact the Registrant, Admin, or Tech contact of the queried domain name
+Registry Tech ID: REDACTED FOR PRIVACY
+Tech Name: REDACTED FOR PRIVACY
+Tech Organization: REDACTED FOR PRIVACY
+Tech Street: REDACTED FOR PRIVACY
+Tech City: REDACTED FOR PRIVACY
+Tech State/Province: REDACTED FOR PRIVACY
+Tech Postal Code: REDACTED FOR PRIVACY
+Tech Country: REDACTED FOR PRIVACY
+Tech Phone: REDACTED FOR PRIVACY
+Tech Fax: REDACTED FOR PRIVACY
+Tech Email: Please query the RDDS service of the Registrar of Record identified in this output for information on how to contact the Registrant, Admin, or Tech contact of the queried domain name
+Registry Billing ID: REDACTED FOR PRIVACY
+Billing Name: REDACTED FOR PRIVACY
+Billing Organization: REDACTED FOR PRIVACY
+Billing Street: REDACTED FOR PRIVACY
+Billing City: REDACTED FOR PRIVACY
+Billing State/Province: REDACTED FOR PRIVACY
+Billing Postal Code: REDACTED FOR PRIVACY
+Billing Country: REDACTED FOR PRIVACY
+Billing Phone: REDACTED FOR PRIVACY
+Billing Fax: REDACTED FOR PRIVACY
+Billing Email: Please query the RDDS service of the Registrar of Record identified in this output for information on how to contact the Registrant, Admin, or Tech contact of the queried domain name
+Name Server: ns1.uniregistry-dns.com
+Name Server: ns1.uniregistry-dns.net
+Name Server: ns2.uniregistry-dns.com
+Name Server: ns2.uniregistry-dns.net
+DNSSEC: unsigned
+URL of the ICANN Whois Inaccuracy Complaint Form: https://www.icann.org/wicf/
+
+>>> Last update of WHOIS database: 2019-08-05T08:24:28.149Z <<<
+
+
+
+
+Domain Name: FAST.PHOTO
+Registry Domain ID: DO_F6C6EB7862A5B317AEACF2E684ABA436-UR
+Registrar WHOIS Server: whois.uniregistrar.net
+Registrar URL: http://uniregistry.com
+Updated Date: 2019-03-09-T23:01:53Z
+Creation Date: 2018-04-06-T14:31:36Z
+Registrar Registration Expiration Date: 2020-04-06-T14:31:36Z
+Registrar: UNIREGISTRAR CORP
+Registrar IANA ID: 1659
+Registrar Abuse Contact Email: abuse@uniregistry.com
+Registrar Abuse Contact Phone: +1.4426008800
+Domain Status: clientTransferProhibited http://www.icann.org/epp#clientTransferProhibited
+Registry Registrant ID: UNIREGPWKQ7DUSMQ
+Registrant Name: PRIVACYDOTLINK CUSTOMER 3560839
+Registrant Organization: 
+Registrant Street: PO BOX 30485   
+Registrant City: SEVEN MILE BEACH
+Registrant State/Province: GRAND CAYMAN
+Registrant Postal Code: KY1-1202
+Registrant Country: KY
+Registrant Phone: +1.3457495465
+Registrant Phone Ext: 
+Registrant Fax: 
+Registrant Fax Ext: 
+Registrant Email: 3560839@PRIVACY-LINK.COM
+Registry Admin ID: UNIREGPWKQ7DUSMQ
+Admin Name: PRIVACYDOTLINK CUSTOMER 3560839
+Admin Organization: 
+Admin Street: PO BOX 30485   
+Admin City: SEVEN MILE BEACH
+Admin State/Province: GRAND CAYMAN
+Admin Postal Code: KY1-1202
+Admin Country: KY
+Admin Phone: +1.3457495465
+Admin Phone Ext: 
+Admin Fax: 
+Admin Fax Ext: 
+Admin Email: 3560839@PRIVACY-LINK.COM
+Registry Tech ID: UNIREGPWKQ7DUSMQ
+Tech Name: PRIVACYDOTLINK CUSTOMER 3560839
+Tech Organization: 
+Tech Street: PO BOX 30485   
+Tech City: SEVEN MILE BEACH
+Tech State/Province: GRAND CAYMAN
+Tech Postal Code: KY1-1202
+Tech Country: KY
+Tech Phone: +1.3457495465
+Tech Phone Ext: 
+Tech Fax: 
+Tech Fax Ext: 
+Tech Email: 3560839@PRIVACY-LINK.COM
+Name Server: ns1.uniregistry-dns.com
+Name Server: ns1.uniregistry-dns.net
+Name Server: ns2.uniregistry-dns.com
+Name Server: ns2.uniregistry-dns.net
+DNSSEC: unsigned
+URL of the ICANN WHOIS Data Problem Reporting System: http://wdprs.internic.net/
+
+>>> Last update of WHOIS database: 2019-08-05T08:24:28.468Z <<<
+
+
+
+
+Domain Name: FAST.PHOTO
+Registry Domain ID: DO_F6C6EB7862A5B317AEACF2E684ABA436-UR
+Registrar WHOIS Server: whois.uniregistrar.net
+Registrar URL: http://uniregistry.com
+Updated Date: 2019-03-09-T23:01:53Z
+Creation Date: 2018-04-06-T14:31:36Z
+Registrar Registration Expiration Date: 2020-04-06-T14:31:36Z
+Registrar: UNIREGISTRAR CORP
+Registrar IANA ID: 1659
+Registrar Abuse Contact Email: abuse@uniregistry.com
+Registrar Abuse Contact Phone: +1.4426008800
+Domain Status: clientTransferProhibited http://www.icann.org/epp#clientTransferProhibited
+Registry Registrant ID: UNIREGPWKQ7DUSMQ
+Registrant Name: PRIVACYDOTLINK CUSTOMER 3560839
+Registrant Organization: 
+Registrant Street: PO BOX 30485   
+Registrant City: SEVEN MILE BEACH
+Registrant State/Province: GRAND CAYMAN
+Registrant Postal Code: KY1-1202
+Registrant Country: KY
+Registrant Phone: +1.3457495465
+Registrant Phone Ext: 
+Registrant Fax: 
+Registrant Fax Ext: 
+Registrant Email: 3560839@PRIVACY-LINK.COM
+Registry Admin ID: UNIREGPWKQ7DUSMQ
+Admin Name: PRIVACYDOTLINK CUSTOMER 3560839
+Admin Organization: 
+Admin Street: PO BOX 30485   
+Admin City: SEVEN MILE BEACH
+Admin State/Province: GRAND CAYMAN
+Admin Postal Code: KY1-1202
+Admin Country: KY
+Admin Phone: +1.3457495465
+Admin Phone Ext: 
+Admin Fax: 
+Admin Fax Ext: 
+Admin Email: 3560839@PRIVACY-LINK.COM
+Registry Tech ID: UNIREGPWKQ7DUSMQ
+Tech Name: PRIVACYDOTLINK CUSTOMER 3560839
+Tech Organization: 
+Tech Street: PO BOX 30485   
+Tech City: SEVEN MILE BEACH
+Tech State/Province: GRAND CAYMAN
+Tech Postal Code: KY1-1202
+Tech Country: KY
+Tech Phone: +1.3457495465
+Tech Phone Ext: 
+Tech Fax: 
+Tech Fax Ext: 
+Tech Email: 3560839@PRIVACY-LINK.COM
+Name Server: ns1.uniregistry-dns.com
+Name Server: ns1.uniregistry-dns.net
+Name Server: ns2.uniregistry-dns.com
+Name Server: ns2.uniregistry-dns.net
+DNSSEC: unsigned
+URL of the ICANN WHOIS Data Problem Reporting System: http://wdprs.internic.net/
+
+>>> Last update of WHOIS database: 2019-08-05T08:24:28.733Z <<<
+

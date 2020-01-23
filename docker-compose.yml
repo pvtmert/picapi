@@ -1,19 +1,19 @@
-#!/usr/bin/env docker-compose -p picapi -f
+#!/usr/bin/env -S docker-compose -p picapi -f
 
 version: "3.7"
 
 networks:
   internal:
-    driver: overlay
+    driver: bridge
     internal: true
     external: false
   external:
-    driver: overlay
+    driver: bridge
     internal: false
     external: false
 
 volumes:
-  data:
+  data_files:
     driver: local
   nfs:
     driver: local
@@ -25,10 +25,10 @@ volumes:
 services:
 
   application:
-    privileged: true
+    privileged: false
     restart: on-failure
-    command: python3 main.py ${PORT:-8000}
-    image: pvtmert/picapi
+    command: python3 api ${PORT:-8000}
+    image: pvtmert/picapi:full
     build:
       context: ./
       dockerfile: dockerfile
@@ -45,10 +45,10 @@ services:
       retries: 3
 
   cache:
-    privileged: true
+    privileged: false
     restart: on-failure
     command: redis-server
-    image: pvtmert/picapi
+    image: pvtmert/picapi:full
     build:
       context: ./
       dockerfile: dockerfile
@@ -63,18 +63,18 @@ services:
       retries: 3
 
   gateway:
-    privileged: true
+    privileged: false
     restart: on-failure
     command: |
       bash -c "
       rm -rf /etc/nginx/sites-enabled/default;
       echo '
         resolver_timeout 30s;
-        resolver 127.0.0.11 valid=1h ipv6=off;
+        resolver 127.0.0.11 valid=1m ipv6=off;
         server {
           listen 80 default_server;
-          location /api {
-            set $$upstream http://application:${PORT:-8000};
+          location /api/ {
+            set $$upstream http://application:${PORT:-8000}/;
             proxy_read_timeout 1m;
             proxy_pass $$upstream;
           }
@@ -84,7 +84,7 @@ services:
       ln -sf /dev/stderr /var/log/nginx/error.log;
       nginx -g 'daemon off;';
       "
-    image: pvtmert/picapi
+    image: pvtmert/picapi:full
     build:
       context: ./
       dockerfile: dockerfile
@@ -108,15 +108,13 @@ services:
       bash -c '
         echo "/data *(rw,sync,insecure,no_subtree_check,no_root_squash,fsid=0)" \
         | tee -a /etc/exports;
-        exportfs -ra;
         service rpcbind           start;
         service nfs-common        start;
         service nfs-kernel-server start;
-        exportfs -ra
-        netstat -tpnc;
+        exportfs -ra; true netstat -tpnc;
         rpc.nfsd -d -U -N 3 -V 4 $$(nproc);
       '
-    image: pvtmert/picapi
+    image: pvtmert/picapi:full
     build:
       context: ./
       dockerfile: dockerfile
